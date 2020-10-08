@@ -7,6 +7,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 public class Book {
 	@Id
@@ -21,6 +23,7 @@ public class Book {
 	
 	@ManyToOne
     @JoinColumn(name = "cattid")
+	@JsonBackReference
 	private Category category;
 	
 	public Book() {}
